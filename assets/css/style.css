@@ -1,0 +1,629 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::-moz-selection {
+  background: #333;
+  color: #fff;
+}
+
+::selection {
+  background: #333;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+  line-height: 1.4;
+  color: #333;
+  font-family: arial,sans-serif;
+  -webkit-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
+}
+
+body {
+  background: #fff;
+  overflow: auto;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.top {
+  position: fixed;
+  bottom: 5vw;
+  right: 5vw;
+}
+
+.top img {
+  width: 30px;
+  height: 30px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 10vw;
+  z-index: 2;
+  background: #fad24d;
+  -webkit-box-shadow: 0 0px 10px #3332;
+          box-shadow: 0 0px 10px #3332;
+}
+
+nav .logo {
+  font-size: 20px;
+  color: #333;
+}
+
+nav button.menu-trigger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 100;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-transition: all ease-in .2s;
+  transition: all ease-in .2s;
+}
+
+nav button.menu-trigger span {
+  z-index: 5;
+  height: 2px;
+  background: #333;
+  width: 100%;
+}
+
+nav ul.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #333333;
+  list-style: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  -webkit-transition: all  ease-in .1s;
+  transition: all  ease-in .1s;
+  z-index: 10;
+  visibility: hidden;
+}
+
+nav ul.menu li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul.menu li a {
+  color: #fad24d;
+  font-size: 4vh;
+  -webkit-transition: .1s all ease-in;
+  transition: .1s all ease-in;
+}
+
+nav ul.menu li a:hover {
+  letter-spacing: 5px;
+  -webkit-transition: .1s all ease-in;
+  transition: .1s all ease-in;
+}
+
+nav ul.menu-open {
+  width: 100vw;
+  height: 100vh;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: all ease-in .2s;
+  transition: all ease-in .2s;
+}
+
+nav button.menu-open {
+  -webkit-transition: all ease-in .2s;
+  transition: all ease-in .2s;
+}
+
+nav button.menu-open span {
+  position: absolute;
+  background: #fad24d;
+  top: 50%;
+  -webkit-transition: all ease-in .2s;
+  transition: all ease-in .2s;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10vw;
+  font-size: 5vw;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #fad24d;
+  line-height: 1;
+}
+
+header img {
+  position: absolute;
+  top: 10vh;
+  right: 10vw;
+}
+
+section#konsul, section#ambulance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fad24d;
+  padding: 5vw;
+  height: 80vh;
+  width: 100%;
+  font-size: 1.2em;
+  position: relative;
+  z-index: 1;
+}
+
+section#konsul img, section#ambulance img {
+  position: relative;
+  width: 30vw;
+  height: 30vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section#konsul .btn, section#ambulance .btn {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 12px 16px;
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #15bdb2;
+  border: 1px solid transparent;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
+}
+
+section#konsul .btn:hover, section#ambulance .btn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
+}
+
+div.about {
+  position: relative;
+  background: #fff;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 5vw;
+}
+
+div.about h1 {
+  font-size: 3em;
+}
+
+div.about p {
+  margin-top: 10px;
+}
+
+div.about .content {
+  max-width: 600px;
+}
+
+section#doctor {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-rows: (minmax(300px, 1fr))[auto];
+      grid-template-rows: repeat(auto, minmax(300px, 1fr));
+}
+
+section#doctor div {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  margin: 0 auto;
+}
+
+section#doctor div .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #fad24dab, #f8df8dab);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: #000 !important;
+  -webkit-transition: .5s all ease-in-out;
+  transition: .5s all ease-in-out;
+}
+
+section#doctor div .text p {
+  padding: 10px;
+}
+
+section#doctor div:hover .text {
+  opacity: 1;
+  top: 0;
+  -webkit-transition: .5s all ease-in-out;
+  transition: .5s all ease-in-out;
+}
+
+section#doctor a {
+  font-size: 15pt;
+  font-weight: bolder;
+  text-decoration: underline;
+  color: #000 !important;
+}
+
+section#doctor img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  display: block;
+}
+
+section.about-visi {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #FAD24D), color-stop(50%, #FFF));
+  background: linear-gradient(#FAD24D 50%, #FFF 50%);
+  position: relative;
+  z-index: 1;
+}
+
+section.about-visi .container {
+  margin: auto;
+  padding: 50px 100px;
+  width: 70vw;
+  -webkit-box-shadow: 0 0 10px #3336;
+          box-shadow: 0 0 10px #3336;
+  background: #fff;
+}
+
+section.about-visi h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+section.about-visi p {
+  margin-bottom: 20px;
+  text-indent: 50px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 200px;
+  padding: 40px;
+}
+
+footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+}
+
+footer ul img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer p {
+  text-align: center;
+}
+
+.booking {
+  text-align: center;
+  padding: 2vw;
+  position: fixed;
+  top: 0;
+  right: -120%;
+  height: 100vh;
+  width: 50vw;
+  background: #fff;
+  -webkit-box-shadow: -10px 0 10px #0004;
+          box-shadow: -10px 0 10px #0004;
+  z-index: 100;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.booking .close {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  background: #333;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.booking .close span {
+  position: absolute;
+  width: 30px;
+  border: 1px solid #fff;
+}
+
+.booking .close span:first-child {
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
+}
+
+.booking .close span:last-child {
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+}
+
+.booking form {
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+}
+
+.booking form label {
+  font-size: 15pt;
+}
+
+.booking form div {
+  width: 100%;
+  display: block;
+}
+
+.booking form input, .booking form select, .booking form .btn {
+  display: block;
+  padding: 6px 12px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.booking form .terms {
+  display: inline;
+  width: 15px;
+  height: 15px;
+}
+
+.booking form .btn {
+  background: #333;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-size: 14pt;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .booking {
+    width: 100vw !important;
+    padding: 50px 0;
+  }
+  .booking h1 {
+    font-size: 16pt;
+  }
+  .booking form {
+    padding: 20px;
+  }
+  .booking form input {
+    font-size: 12pt;
+  }
+  section.about-visi .container {
+    width: 95vw;
+    padding: 50px 40px;
+    font-size: 1.4em;
+  }
+  section#doctor {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section img {
+    height: 40vw;
+    width: 40vw;
+  }
+  section#ambulance {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  section#ambulance img {
+    width: 50vw !important;
+    height: 50vw !important;
+  }
+  section#konsul {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+  }
+  section#konsul img {
+    width: 50vw !important;
+    height: 50vw !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

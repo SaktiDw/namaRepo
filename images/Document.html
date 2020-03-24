@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Document_files/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <span id="top"></span>
+    <a href="#top" class="top">Back to Port!</a>
+    <nav>
+        <a href="http://127.0.0.1:5500/" class="logo">Le Hospitale</a>
+        <div class="btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="checkbox" class="triger">
+            <ol class="menu">
+                <li><a href="">About us</a></li>
+                <li><a href="">Our Facilities</a></li>
+                <li><a href="">Our Services</a></li>
+                <li><a href="">Our Doctor</a></li>
+                <li><a href="">Booking</a></li>
+            </ol>
+        </div>
+    </nav>
+
+    <header id="header">
+        <h1>We <br>Make <br>Sense.</h1>
+    </header>
+
+    <section id="ambulance">
+        <img src="Document_files/ambulance.svg" alt="">
+        <div class="text">
+            <h1>Are you need some help?</h1>
+            <p>Just <strong>call us</strong> and we will help you anywhere and anytime <strong>for free.</strong></p>
+            <button class="btn" onclick="document.location.href = 'tel:+6281225846909'">Call Ambulance</button>
+        </div>
+    </section>
+    <section id="konsul">
+        <div>
+            <h1>Hi there! Wanna meet our doctor?</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br> Nostrum cumque voluptatem consequuntur
+                ratione quo sed, <br>ducimus ipsum incidunt ut dolores quisquam!</p>
+            <a href="" class="btn">Make your Appoinment</a>
+        </div>
+        <img src="Document_files/doctor.svg" alt="">
+    </section>
+    <div class="about">
+        <div class="content">
+            <h1>Our History</h1>
+            <p>Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatem totam
+                similique omnis recusandae explicabo, et esse magnam est nam minus, quae voluptas minima distinctio?
+                Eaque voluptatem veniam est nulla. sit amet consectetur adipisicing elit. Veritatis corrupti
+                exercitationem libero reiciendis quasi hic quae, molestias eum facere minus obcaecati, laudantium
+                eligendi officiis culpa! Molestias reprehenderit impedit magnam dolorem.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium accusamus illum neque porro dolorum
+                iure aut hic! Ad possimus debitis blanditiis modi minima. Amet nemo exercitationem veritatis dolorum est
+                nisi! ipsum dolor sit amet consectetur adipisicing elit. Magni facere reiciendis temporibus, eum tempora
+                adipisci nemo vero. Eaque, debitis consequatur neque totam quaerat similique sed laudantium quisquam
+                voluptate asperiores iste!</p>
+        </div>
+    </div>
+    <section id="doctor">
+        <a href="#"><img src="Document_files/hs-room-1.jpg" alt=""></a>
+        <a href="#"><img src="Document_files/hs-room-1.jpg" alt=""></a>
+        <a href="#"><img src="Document_files/hs-room-1.jpg" alt=""></a>
+        <a href="#"><img src="Document_files/hs-room-1.jpg" alt=""></a>
+        <a href="#"><img src="Document_files/hs-room-1.jpg" alt=""></a>
+        <a href="#"><img src="Document_files/hs-room-1.jpg" alt=""></a>
+        <a href="#"><img src="Document_files/hs-room-1.jpg" alt=""></a>
+        <a href="#"><img src="Document_files/hs-room-1.jpg" alt=""></a>
+        <a href="#"><img src="Document_files/hs-room-1.jpg" alt=""></a>
+    </section>
+    <footer>
+        <ul>
+            <a href=""><img src="Document_files/facebook.svg" alt=""></a>
+            <a href=""><img src="Document_files/google-plus.svg" alt=""></a>
+            <a href=""><img src="Document_files/instagram.svg" alt=""></a>
+            <a href=""><img src="Document_files/twitter.svg" alt=""></a>
+        </ul>
+        <p>Lorem perferendis sunt tenetur ad, quidem accusamus provident omnis. Minima? <br>
+            ©Copyright - Le Hospitale 2020</p>
+    </footer>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

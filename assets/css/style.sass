@@ -1,0 +1,356 @@
+$primary-color : #fad24d
+// mixxin
+=flex($d,$j,$a)
+    display: flex
+    flex-direction: $d
+    justify-content: $j
+    align-items: $a
+
+// normalize
+*,*::before,*::after
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    
+::selection
+    background: #333
+    color: #fff
+html
+    scroll-behavior: smooth
+    line-height: 1.4
+    color: #333
+    font-family: arial,sans-serif
+    transition: all ease-in-out .2s
+body 
+    background: #fff
+    overflow: auto
+body.menu-open
+    overflow: hidden
+a
+    text-decoration: none
+button 
+    cursor: pointer
+// button to top
+.top
+    position: fixed
+    bottom: 5vw
+    right: 5vw
+    img
+        width: 30px
+        height: 30px
+        transform: rotate(-90deg)
+// navigation
+nav
+    +flex(row,space-between,center)
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 70px
+    padding: 0 10vw
+    z-index: 2
+    background: $primary-color
+    box-shadow: 0 0px 10px #3332
+    .logo 
+        font-size: 20px
+        color: #333
+    button.menu-trigger
+        +flex(column,space-evenly,center)
+        z-index: 100
+        position: relative
+        width: 40px
+        height: 40px
+        background: transparent
+        border: none
+        outline: none
+        transition: all ease-in .2s
+        span
+            z-index: 5
+            height: 2px
+            background: #333
+            width: 100%
+    ul.menu
+        +flex(column,space-evenly,center)
+        background-color: #333333
+        list-style: none
+        position: fixed
+        right: 0
+        top: 0
+        bottom: 0
+        right: 0
+        opacity: 0
+        height: 0
+        width: 0
+        transition: all  ease-in .1s
+        z-index: 10
+        visibility: hidden
+        li
+            flex: 1
+            +flex(column,space-around,center)
+            a
+                color: $primary-color
+                font-size: 4vh
+                transition: .1s all ease-in
+            a:hover
+                letter-spacing: 5px
+                transition: .1s all ease-in
+    ul.menu-open
+        width: 100vw
+        height: 100vh
+        visibility: visible
+        opacity: 1
+        transition: all ease-in .2s
+    button.menu-open
+        transition: all ease-in .2s
+        span
+            position: absolute
+            background: $primary-color
+            top: 50%
+            transition: all ease-in .2s
+        // span:first-child
+        //     transform: rotate(45deg)
+        // span:nth-child(2)
+        //     visibility: hidden
+        // span:last-child
+        //     transform: rotate(-45deg)
+// header
+header
+    +flex(row,flex-start,center)
+    padding: 0 10vw
+    font-size: 5vw
+    height: 100vh
+    position: relative
+    z-index: 1
+    overflow: hidden
+    background-color: $primary-color
+    line-height: 1
+    img
+        position: absolute
+        top: 10vh
+        right: 10vw
+
+//  index.html
+section#konsul, section#ambulance
+    +flex(row,space-evenly,center)
+    background-color: $primary-color
+    padding: 5vw
+    height: 80vh
+    width: 100%
+    font-size: 1.2em
+    position: relative
+    z-index: 1
+    img
+        position: relative
+        width: 30vw
+        height: 30vw
+        object-fit: cover
+
+    .btn
+        display: inline-block
+        margin: 15px 0
+        padding: 12px 16px
+        font-size: 15px
+        color: #ffffff
+        // background-color: #21d0c3
+        background-color: #15bdb2
+        border: 1px solid transparent
+        cursor: pointer
+        transition: all ease-in-out .2s
+    .btn:hover
+        transform: scale(1.2)
+        transition: all ease-in-out .2s
+
+div.about
+    position: relative
+    background: #fff
+    z-index: 1
+    +flex(row,flex-start,center)
+    width: 100%
+    height: 100vh
+    overflow: hidden
+    padding: 5vw
+    h1
+        font-size: 3em
+    p
+        margin-top: 10px
+    .content
+        max-width: 600px
+
+section#doctor
+    position: relative
+    display: grid
+    grid-template-columns: repeat(auto-fit , minmax(300px, 1fr) )
+    grid-template-rows: repeat(auto , minmax(300px, 1fr) )
+    div 
+        position: relative
+        overflow: hidden
+        min-height: 300px
+        margin: 0 auto
+        .text
+            position: absolute            
+            top: 0
+            left: 0
+            opacity: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(45deg,#fad24dab,#f8df8dab)
+            +flex(column,center ,center)
+            text-align: center
+            color: #000 !important
+            transition: .5s all ease-in-out
+            p
+                padding: 10px
+            
+    div:hover .text
+        opacity: 1
+        top: 0
+        transition: .5s all ease-in-out
+    a
+        font-size: 15pt
+        font-weight: bolder
+        text-decoration: underline
+        color: #000 !important
+    img 
+        display: block
+        width: 100%
+        height: 100%
+        min-height: 300px
+        object-fit: cover
+iframe
+    width: 100%
+    height: 300px
+    display: block
+
+
+
+// abut.html
+section.about-visi
+    background: linear-gradient(#FAD24D 50%, #FFF 50%)
+    position: relative
+    z-index: 1
+    .container
+        margin: auto
+        padding: 50px 100px
+        width: 70vw
+        box-shadow: 0 0 10px #3336
+        background: #fff
+    h1
+        font-size: 40px
+        text-align: center
+    p
+        margin-bottom: 20px
+        text-indent: 50px
+
+// footer
+footer
+    +flex(column,space-between,center)
+    width: 100%
+    height: 200px
+    padding: 40px
+    ul
+        +flex(row,space-evenly,center)
+        width: 300px
+
+        img
+            width: 30px
+            height: 30px
+            object-fit: cover
+    p
+        text-align: center
+
+// booking
+.booking
+    text-align: center
+    padding: 2vw
+    position: fixed
+    top: 0
+    right: -120%
+    height: 100vh
+    width: 50vw
+    background: #fff
+    box-shadow: -10px 0 10px #0004
+    z-index: 100
+    transition: all .5s ease
+    overflow-x: hidden
+    overflow-y: scroll
+    .close 
+        width: 60px
+        height: 60px
+        position: absolute
+        top: 2vw
+        right: 2vw
+        background: #333
+        border: 1px solid transparent
+        border-radius: 50%
+        padding: 10px
+        span
+            position: absolute
+            width: 30px
+            border: 1px solid #fff
+            right: 
+        span:first-child
+            transform: translateX(-50%) rotate(-45deg)
+        span:last-child
+            transform: translateX(-50%) rotate(45deg)
+    form
+        text-align: left
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        padding: 50px
+        label
+            font-size: 15pt
+        div
+            width: 100%
+            display: block
+        input, select, .btn
+            display: block
+            padding: 6px 12px
+            margin-bottom: 10px
+            width: 100%
+        .terms
+            display: inline
+            width: 15px
+            height: 15px
+        
+        .btn
+            background: #333
+            border-radius: 50px
+            border: 1px solid transparent
+            color: #fff
+            font-size: 14pt
+            cursor: pointer
+@media screen and ( max-width: 600px )
+    .booking
+        width: 100vw !important
+        padding: 50px 0
+        h1
+            font-size: 16pt
+        form
+            padding: 20px
+            input
+                font-size: 12pt
+    section.about-visi .container
+        width: 95vw
+        padding: 50px 40px
+        font-size: 1.4em
+    
+    section#doctor
+        display: grid
+        grid-template-columns: repeat(auto-fit , minmax(300px, 1fr) )
+    section
+        +flex(column,space-evenly,center)
+        img
+            height: 40vw
+            width: 40vw
+    section#ambulance 
+        flex-direction: column !important
+        img
+            width: 50vw !important
+            height: 50vw !important
+    section#konsul
+        flex-direction: column-reverse !important
+        img
+            width: 50vw !important
+            height: 50vw !important
