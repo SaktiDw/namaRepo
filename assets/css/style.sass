@@ -54,6 +54,8 @@ nav
     .logo 
         font-size: 20px
         color: #333
+    button.menu-trigger:hover span
+        width: 100% !important
     button.menu-trigger
         +flex(column,space-evenly,center)
         z-index: 100
@@ -65,9 +67,21 @@ nav
         outline: none
         transition: all ease-in .2s
         span
+            border-radius: 50px
             z-index: 5
-            height: 2px
-            background: #333
+            height: 4px
+            position: absolute
+            background: #333 
+            transition: all ease-in .2s
+            right: 0
+        span:first-child
+            width: 80%
+            top: 25%
+        span:nth-child(2)
+            width: 60%
+            top: 50%
+        span:last-child
+            top: 75%
             width: 100%
     ul.menu
         +flex(column,space-evenly,center)
@@ -81,7 +95,7 @@ nav
         opacity: 0
         height: 0
         width: 0
-        transition: all  ease-in .1s
+        transition: all  ease-in .2s
         z-index: 10
         visibility: hidden
         li
@@ -94,23 +108,24 @@ nav
             a:hover
                 letter-spacing: 5px
                 transition: .1s all ease-in
+    // style ketika menu terbuka
     ul.menu-open
         width: 100vw
         height: 100vh
         visibility: visible
         opacity: 1
-        transition: all ease-in .2s
+        transition: all ease-in .2s  
     span.menu-open
-        position: absolute
+        width: 100% !important        
         background: $primary-color !important
-        top: 50%
-        transition: all ease-in .2s
+        top: 50% !important
+        transition: all ease-in .3s
     span.menu-open:first-child
-        transform: rotate(45deg)
+        transform: rotate(225deg)
     span.menu-open:nth-child(2)
         visibility: hidden
     span.menu-open:last-child
-        transform: rotate(-45deg)
+        transform: rotate(-225deg)
 // header
 header
     +flex(row,flex-start,center)
@@ -320,6 +335,8 @@ footer
             font-size: 14pt
             cursor: pointer
 @media screen and ( max-width: 600px )
+    header
+        font-size: 8vw
     .booking
         width: 100vw !important
         padding: 50px 0
