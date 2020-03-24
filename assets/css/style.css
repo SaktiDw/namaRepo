@@ -187,17 +187,26 @@ nav ul.menu-open {
   transition: all ease-in .2s;
 }
 
-nav button.menu-open {
+nav span.menu-open {
+  position: absolute;
+  background: #fad24d !important;
+  top: 50%;
   -webkit-transition: all ease-in .2s;
   transition: all ease-in .2s;
 }
 
-nav button.menu-open span {
-  position: absolute;
-  background: #fad24d;
-  top: 50%;
-  -webkit-transition: all ease-in .2s;
-  transition: all ease-in .2s;
+nav span.menu-open:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+nav span.menu-open:nth-child(2) {
+  visibility: hidden;
+}
+
+nav span.menu-open:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 header {

@@ -100,19 +100,17 @@ nav
         visibility: visible
         opacity: 1
         transition: all ease-in .2s
-    button.menu-open
+    span.menu-open
+        position: absolute
+        background: $primary-color !important
+        top: 50%
         transition: all ease-in .2s
-        span
-            position: absolute
-            background: $primary-color
-            top: 50%
-            transition: all ease-in .2s
-        // span:first-child
-        //     transform: rotate(45deg)
-        // span:nth-child(2)
-        //     visibility: hidden
-        // span:last-child
-        //     transform: rotate(-45deg)
+    span.menu-open:first-child
+        transform: rotate(45deg)
+    span.menu-open:nth-child(2)
+        visibility: hidden
+    span.menu-open:last-child
+        transform: rotate(-45deg)
 // header
 header
     +flex(row,flex-start,center)
