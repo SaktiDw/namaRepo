@@ -348,24 +348,23 @@ div.about .content {
   max-width: 600px;
 }
 
-section#doctor {
+section.grid {
   position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  -ms-grid-rows: (minmax(300px, 1fr))[auto];
-      grid-template-rows: repeat(auto, minmax(300px, 1fr));
 }
 
-section#doctor div {
+section.grid div {
   position: relative;
   overflow: hidden;
   min-height: 300px;
+  min-width: 100%;
   margin: 0 auto;
 }
 
-section#doctor div .text {
+section.grid div .text {
   position: absolute;
   top: 0;
   left: 0;
@@ -392,28 +391,29 @@ section#doctor div .text {
   transition: .5s all ease-in-out;
 }
 
-section#doctor div .text p {
+section.grid div .text p {
   padding: 10px;
 }
 
-section#doctor div:hover .text {
+section.grid div:hover .text {
   opacity: 1;
   top: 0;
   -webkit-transition: .5s all ease-in-out;
   transition: .5s all ease-in-out;
 }
 
-section#doctor a {
+section.grid a {
   font-size: 15pt;
   font-weight: bolder;
   text-decoration: underline;
   color: #000 !important;
 }
 
-section#doctor img {
+section.grid img {
   display: block;
   width: 100%;
   height: 100%;
+  min-width: 100%;
   min-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -421,7 +421,7 @@ section#doctor img {
 
 iframe {
   width: 100%;
-  height: 300px;
+  height: 400px;
   display: block;
 }
 
@@ -593,6 +593,10 @@ footer p {
   cursor: pointer;
 }
 
+.show {
+  right: 0;
+}
+
 @media screen and (max-width: 600px) {
   header {
     font-size: 8vw;
@@ -615,13 +619,8 @@ footer p {
     padding: 50px 40px;
     font-size: 1.4em;
   }
-  section#doctor {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
   section {
+    text-align: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -637,18 +636,8 @@ footer p {
             align-items: center;
   }
   section img {
-    height: 40vw;
-    width: 40vw;
-  }
-  section#ambulance {
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important;
-  }
-  section#ambulance img {
-    width: 50vw !important;
     height: 50vw !important;
+    width: 50vw !important;
   }
   section#konsul {
     -webkit-box-orient: vertical !important;
@@ -656,9 +645,11 @@ footer p {
         -ms-flex-direction: column-reverse !important;
             flex-direction: column-reverse !important;
   }
-  section#konsul img {
-    width: 50vw !important;
-    height: 50vw !important;
+  section#ambulance {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
