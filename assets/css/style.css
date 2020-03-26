@@ -110,8 +110,8 @@ nav button.menu-trigger {
   background: transparent;
   border: none;
   outline: none;
-  -webkit-transition: all ease-in .2s;
-  transition: all ease-in .2s;
+  -webkit-transition: all ease-in .5s;
+  transition: all ease-in .5s;
 }
 
 nav button.menu-trigger span {
@@ -120,8 +120,8 @@ nav button.menu-trigger span {
   height: 4px;
   position: absolute;
   background: #333;
-  -webkit-transition: all ease-in .2s;
-  transition: all ease-in .2s;
+  -webkit-transition: all ease-in .5s;
+  transition: all ease-in .5s;
   right: 0;
 }
 
@@ -157,17 +157,13 @@ nav ul.menu {
   background-color: #333333;
   list-style: none;
   position: fixed;
+  top: -220vh;
   right: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  height: 0;
-  width: 0;
-  -webkit-transition: all  ease-in .2s;
-  transition: all  ease-in .2s;
+  height: 100vh;
+  width: 100vw;
+  -webkit-transition: all cubic-bezier(0.6, 0.04, 0.98, 0.34) 1s;
+  transition: all cubic-bezier(0.6, 0.04, 0.98, 0.34) 1s;
   z-index: 10;
-  visibility: hidden;
 }
 
 nav ul.menu li {
@@ -201,21 +197,31 @@ nav ul.menu li a:hover {
   transition: .1s all ease-in;
 }
 
+nav ul.menu div {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  right: 0;
+}
+
+nav ul.menu div svg {
+  fill: #333;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 nav ul.menu-open {
-  width: 100vw;
-  height: 100vh;
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: all ease-in .2s;
-  transition: all ease-in .2s;
+  top: 0;
 }
 
 nav span.menu-open {
   width: 100% !important;
   background: #fad24d !important;
   top: 50% !important;
-  -webkit-transition: all ease-in .3s;
-  transition: all ease-in .3s;
+  -webkit-transition: all ease-in .5s;
+  transition: all ease-in .5s;
 }
 
 nav span.menu-open:first-child {
@@ -517,21 +523,21 @@ footer p {
 }
 
 .booking .close {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   position: absolute;
   top: 2vw;
   right: 2vw;
-  background: #333;
+  background: transparent;
   border: 1px solid transparent;
-  border-radius: 50%;
-  padding: 10px;
+  padding: 30px;
 }
 
 .booking .close span {
+  border-radius: 50px;
   position: absolute;
   width: 30px;
-  border: 1px solid #fff;
+  border: 1px solid #999;
 }
 
 .booking .close span:first-child {
@@ -573,9 +579,16 @@ footer p {
 
 .booking form input, .booking form select, .booking form .btn {
   display: block;
-  padding: 6px 12px;
+  padding: 8px 12px;
   margin-bottom: 10px;
   width: 100%;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.booking form input:focus, .booking form select:focus, .booking form .btn:focus {
+  border: 1px solid #333;
 }
 
 .booking form .terms {
@@ -586,11 +599,12 @@ footer p {
 
 .booking form .btn {
   background: #333;
-  border-radius: 50px;
+  border-radius: 5px;
   border: 1px solid transparent;
   color: #fff;
-  font-size: 14pt;
+  font-size: 12pt;
   cursor: pointer;
+  margin: 20px auto;
 }
 
 .show {
@@ -618,6 +632,10 @@ footer p {
     width: 95vw;
     padding: 50px 40px;
     font-size: 1.4em;
+    text-align: left;
+  }
+  section.about-visi .container p {
+    text-indent: 0;
   }
   section {
     text-align: center;

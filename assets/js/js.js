@@ -6,5 +6,12 @@ $('document').ready(function () {
   // open close booking
   $("section#konsul button, button.close").click(function(){
     $(".booking").toggleClass("show");
+    $("body").toggleClass("menu-open");
+  });
+
+  $('button').click(function () {
+    $('#latom').css({
+        top: "0",
+    });
   });
 })

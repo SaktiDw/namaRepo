@@ -65,14 +65,14 @@ nav
         background: transparent
         border: none
         outline: none
-        transition: all ease-in .2s
+        transition: all ease-in .5s
         span
             border-radius: 50px
             z-index: 5
             height: 4px
             position: absolute
             background: #333 
-            transition: all ease-in .2s
+            transition: all ease-in .5s
             right: 0
         span:first-child
             width: 80%
@@ -88,16 +88,15 @@ nav
         background-color: #333333
         list-style: none
         position: fixed
-        right: 0
-        top: 0
-        bottom: 0
-        right: 0
-        opacity: 0
-        height: 0
-        width: 0
-        transition: all  ease-in .2s
+        top: -220vh
+        right: 0        
+        height: 100vh
+        width: 100vw
+        // ea ea
+        // transition: all cubic-bezier(.59,1.05,.64,-0.3) 1s
+        // biasa aja
+        transition: all cubic-bezier(.6,.04,.98,.34) 1s
         z-index: 10
-        visibility: hidden
         li
             flex: 1
             +flex(column,space-around,center)
@@ -108,18 +107,24 @@ nav
             a:hover
                 letter-spacing: 5px
                 transition: .1s all ease-in
+        div
+            position: absolute
+            top: 100vh
+            left: 0
+            right: 0
+            svg
+                fill: #333
+                height: 100%
+                width: 100%
+                object-fit: cover
     // style ketika menu terbuka
     ul.menu-open
-        width: 100vw
-        height: 100vh
-        visibility: visible
-        opacity: 1
-        transition: all ease-in .2s  
+        top: 0
     span.menu-open
         width: 100% !important        
         background: $primary-color !important
         top: 50% !important
-        transition: all ease-in .3s
+        transition: all ease-in .5s
     span.menu-open:first-child
         transform: rotate(225deg)
     span.menu-open:nth-child(2)
@@ -231,13 +236,11 @@ section.grid
         min-width: 100%
         min-height: 300px
         object-fit: cover
+// google maps
 iframe
     width: 100%
     height: 400px
     display: block
-
-
-
 // abut.html
 section.about-visi
     background: linear-gradient(#FAD24D 50%, #FFF 50%)
@@ -289,20 +292,19 @@ footer
     overflow-x: hidden
     overflow-y: scroll
     .close 
-        width: 60px
-        height: 60px
+        width: 40px
+        height: 40px
         position: absolute
         top: 2vw
         right: 2vw
-        background: #333
-        border: 1px solid transparent
-        border-radius: 50%
-        padding: 10px
+        background: transparent
+        border: 1px solid transparent        
+        padding: 30px
         span
+            border-radius: 50px
             position: absolute
             width: 30px
-            border: 1px solid #fff
-            right: 
+            border: 1px solid #999
         span:first-child
             transform: translateX(-50%) rotate(-45deg)
         span:last-child
@@ -321,9 +323,14 @@ footer
             display: block
         input, select, .btn
             display: block
-            padding: 6px 12px
+            padding: 8px 12px
             margin-bottom: 10px
             width: 100%
+            background: transparent
+            border: 1px solid #ccc
+            border-radius: 4px
+        input:focus, select:focus, .btn:focus
+            border: 1px solid #333
         .terms
             display: inline
             width: 15px
@@ -331,11 +338,12 @@ footer
         
         .btn
             background: #333
-            border-radius: 50px
+            border-radius: 5px
             border: 1px solid transparent
             color: #fff
-            font-size: 14pt
+            font-size: 12pt
             cursor: pointer
+            margin: 20px auto
 .show
     right: 0
 @media screen and ( max-width: 600px )
@@ -354,6 +362,9 @@ footer
         width: 95vw
         padding: 50px 40px
         font-size: 1.4em
+        text-align: left
+        p
+            text-indent: 0
     section
         text-align: center
         +flex(column,space-evenly,center)
